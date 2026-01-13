@@ -12,15 +12,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 2️⃣ Setup Java 17
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
 
+      # 3️⃣ Cache Maven dependencies
       - name: Cache Maven packages
         uses: actions/cache@v4
         with:
@@ -28,30 +31,34 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
+      # 4️⃣ Run Selenium tests
       - name: Run tests
         run: mvn clean test -Denv=qa -Dbrowser=chrome
 
-      # 1️⃣ Upload raw Allure results
+      # 5️⃣ Upload raw Allure results
       - name: Upload Allure results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: allure-results
+          path: target/allure-results
 
-      # 2️⃣ Install Allure CLI
-      - name: Install Allure
+      # 6️⃣ Install Allure CLI (CORRECT WAY)
+      - name: Install Allure CLI
         if: always()
         run: |
-          sudo apt-get update
-          sudo apt-get install -y allure
+          curl -o allure.zip -L https://github.com/allure-framework/allure2/releases/download/2.25.0/allure-2.25.0.zip
+          unzip allure.zip
+          sudo mv allure-2.25.0 /opt/allure
+          echo "/opt/allure/bin" >> $GITHUB_PATH
+          allure --version
 
-      # 3️⃣ Generate Allure HTML report
+      # 7️⃣ Generate Allure HTML report
       - name: Generate Allure report
         if: always()
-        run: allure generate allure-results -o allure-report --clean
+        run: allure generate target/allure-results -o allure-report --clean
 
-      # 4️⃣ Upload Allure HTML report
+      # 8️⃣ Upload Allure HTML report
       - name: Upload Allure HTML report
         if: always()
         uses: actions/upload-artifact@v4
