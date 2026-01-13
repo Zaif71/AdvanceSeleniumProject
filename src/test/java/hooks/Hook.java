@@ -14,19 +14,28 @@ import java.io.ByteArrayInputStream;
 public class Hook {
 
     @Before
-    public void setUp() {
-        // Load configuration file
-        ConfigReader.loadConfig();
+    public void setUp(Scenario scenario) {
 
-        // Initialize WebDriver
+        // 1️⃣ Read environment (default = qa)
+        String env = System.getProperty("env", "qa");
+
+        // 2️⃣ Load config based on environment
+        ConfigReader.loadConfig(env);
+
+        // 3️⃣ Initialize WebDriver
         DriverFactory.initDriver();
+
+        // 4️⃣ Add scenario details to Allure
+        Allure.parameter("Environment", env);
+        Allure.parameter("Scenario", scenario.getName());
     }
 
     @After
     public void tearDown(Scenario scenario) {
 
-        // Take screenshot if scenario fails
-        if (scenario.isFailed()) {
+        // 5️⃣ Attach screenshot on failure
+        if (scenario.isFailed() && DriverFactory.getDriver() != null) {
+
             byte[] screenshot =
                     ((TakesScreenshot) DriverFactory.getDriver())
                             .getScreenshotAs(OutputType.BYTES);
@@ -37,7 +46,7 @@ public class Hook {
             );
         }
 
-        // Quit WebDriver
+        // 6️⃣ Quit browser safely
         DriverFactory.quitDriver();
     }
 }

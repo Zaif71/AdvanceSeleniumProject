@@ -1,27 +1,31 @@
 package utils;
 
-import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class ConfigReader {
 
-    private static Properties properties;
+    private static Properties properties = new Properties();
 
-    public static void loadConfig() {
+    public static void loadConfig(String env) {
         try {
-            properties = new Properties();
-            FileInputStream fis =
-                    new FileInputStream("src/test/resources/config/config.properties");
-            properties.load(fis);
+            String fileName = "config/config-" + env + ".properties";
+            InputStream is = ConfigReader.class
+                    .getClassLoader()
+                    .getResourceAsStream(fileName);
+
+            if (is == null) {
+                throw new RuntimeException("Failed to load config for env: " + env);
+            }
+
+            properties.load(is);
+
         } catch (Exception e) {
-            throw new RuntimeException("Failed to load config.properties file");
+            throw new RuntimeException("Failed to load config for env: " + env, e);
         }
     }
 
-
     public static String get(String key) {
-        String env = System.getProperty("env", "qa");
-        return properties.getProperty(env + "." + key);
+        return properties.getProperty(key);
     }
-
 }
