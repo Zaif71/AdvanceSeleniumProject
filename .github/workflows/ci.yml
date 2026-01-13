@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   test:
@@ -28,11 +29,32 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Run tests
-        run: mvn clean test -Dbrowser=chrome
+        run: mvn clean test -Denv=qa -Dbrowser=chrome
 
+      # 1️⃣ Upload raw Allure results
       - name: Upload Allure results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: target/allure-results
+          path: allure-results
+
+      # 2️⃣ Install Allure CLI
+      - name: Install Allure
+        if: always()
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y allure
+
+      # 3️⃣ Generate Allure HTML report
+      - name: Generate Allure report
+        if: always()
+        run: allure generate allure-results -o allure-report --clean
+
+      # 4️⃣ Upload Allure HTML report
+      - name: Upload Allure HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
