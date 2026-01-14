@@ -1,15 +1,14 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 public class LoginPage extends BasePage {
 
     // Locators
     private final By usernameInput = By.id("user-name");
     private final By passwordInput = By.id("password");
-    private final By loginButton = By.id("login-button");
-    private final By errorMessage = By.cssSelector("h3[data-test='error']");
+    private final By loginButton   = By.id("login-button");
+    private final By errorMessage  = By.cssSelector("h3[data-test='error']");
 
     // Actions
     public void enterUsername(String username) {
@@ -30,23 +29,17 @@ public class LoginPage extends BasePage {
         clickLogin();
     }
 
-    // ===== Assertions (POM-level) =====
+    // -------- STATE METHODS (NO ASSERTIONS) --------
 
-    public void verifyLoginSuccess() {
-        Assert.assertTrue(
-                getCurrentUrl().contains("inventory"),
-                "Login failed: User is not redirected to Products page"
-        );
+    public boolean isLoginSuccessful() {
+        return getCurrentUrl().contains("inventory");
     }
 
-    public void verifyLoginFailure() {
-        Assert.assertTrue(
-                isDisplayed(errorMessage),
-                "Login failure expected but error message not displayed"
-        );
+    public boolean isErrorMessageDisplayed() {
+        return isDisplayed(errorMessage);
     }
 
-    public String getErrorMessage() {
+    public String getErrorMessageText() {
         return getText(errorMessage);
     }
 }
