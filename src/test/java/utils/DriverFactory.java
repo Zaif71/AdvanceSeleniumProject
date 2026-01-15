@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DriverFactory {
 
@@ -19,8 +21,20 @@ public class DriverFactory {
         if (browser.equalsIgnoreCase("chrome")) {
 
             WebDriverManager.chromedriver().setup();
+
             ChromeOptions options = new ChromeOptions();
 
+            // ✅ HANDLE PASSWORD / SECURITY / NOTIFICATION POPUPS
+            Map<String, Object> prefs = new HashMap<>();
+            prefs.put("credentials_enable_service", false);
+            prefs.put("profile.password_manager_enabled", false);
+            prefs.put("profile.default_content_setting_values.notifications", 2);
+
+            options.setExperimentalOption("prefs", prefs);
+            options.addArguments("--disable-notifications");
+            options.addArguments("--disable-infobars");
+
+            // ✅ CI / HEADLESS SUPPORT
             if (isCI) {
                 options.addArguments("--headless=new");
                 options.addArguments("--no-sandbox");
@@ -32,8 +46,7 @@ public class DriverFactory {
             driver.set(new ChromeDriver(options));
         }
 
-        getDriver().manage().timeouts()
-                .implicitlyWait(Duration.ofSeconds(10));
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         getDriver().manage().window().maximize();
     }
 
