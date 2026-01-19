@@ -1,59 +1,51 @@
 package utils;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
-import java.util.HashMap;
-import java.util.Map;
 
 public class DriverFactory {
 
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
+    // Initialize driver
     public static void initDriver() {
 
-        String browser = System.getProperty("browser", "chrome");
-        boolean isCI = System.getenv("CI") != null;
+        if (driver.get() == null) {
 
-        if (browser.equalsIgnoreCase("chrome")) {
-
-            WebDriverManager.chromedriver().setup();
+            // Read incognito flag (default = false)
+            String incognito = System.getProperty("incognito", "false");
 
             ChromeOptions options = new ChromeOptions();
 
-            // ✅ HANDLE PASSWORD / SECURITY / NOTIFICATION POPUPS
-            Map<String, Object> prefs = new HashMap<>();
-            prefs.put("credentials_enable_service", false);
-            prefs.put("profile.password_manager_enabled", false);
-            prefs.put("profile.default_content_setting_values.notifications", 2);
-
-            options.setExperimentalOption("prefs", prefs);
-            options.addArguments("--disable-notifications");
-            options.addArguments("--disable-infobars");
-
-            // ✅ CI / HEADLESS SUPPORT
-            if (isCI) {
-                options.addArguments("--headless=new");
-                options.addArguments("--no-sandbox");
-                options.addArguments("--disable-dev-shm-usage");
-                options.addArguments("--disable-gpu");
-                options.addArguments("--window-size=1920,1080");
+            // ✅ Enable Incognito if flag is true
+            if (incognito.equalsIgnoreCase("true")) {
+                options.addArguments("--incognito");
             }
 
-            driver.set(new ChromeDriver(options));
-        }
+            // Recommended options
+            options.addArguments("--start-maximized");
+            options.addArguments("--disable-notifications");
+            options.addArguments("--remote-allow-origins=*");
 
-        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        getDriver().manage().window().maximize();
+            WebDriver webDriver = new ChromeDriver(options);
+
+            webDriver.manage()
+                    .timeouts()
+                    .implicitlyWait(Duration.ofSeconds(10));
+
+            driver.set(webDriver);
+        }
     }
 
+    // Get driver
     public static WebDriver getDriver() {
         return driver.get();
     }
 
+    // Quit driver
     public static void quitDriver() {
         if (driver.get() != null) {
             driver.get().quit();

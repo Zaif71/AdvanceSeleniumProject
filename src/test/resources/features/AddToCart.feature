@@ -1,7 +1,21 @@
 @regression
-Feature: Add product to cart
+Feature: Add products to the cart
 
-  Scenario: User adds a product to cart successfully
+  Background:
     Given user is logged in to SauceDemo
+
+  Scenario: User adds multiple products to the cart
     When user adds "Sauce Labs Backpack" to the cart
-    Then cart badge count should be "1"
+    And user adds "Sauce Labs Bike Light" to the cart
+    Then cart badge count should be "2"
+
+  Scenario: User completes checkout with products in cart
+    When user navigates to cart
+    And user proceeds to checkout
+    And user enters checkout details
+      | firstName | John  |
+      | lastName  | Doe   |
+      | zipCode   | 12345 |
+    And user completes the checkout
+    Then checkout should be successful
+  
