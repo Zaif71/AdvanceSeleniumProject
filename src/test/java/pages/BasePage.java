@@ -12,19 +12,11 @@ import java.time.Duration;
 public class BasePage {
 
     protected WebDriver driver;
-    protected WebDriverWait wait;
+    private final WebDriverWait wait;
 
     public BasePage() {
         this.driver = DriverFactory.getDriver();
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
-    public String getCurrentUrl() {
-        return DriverFactory.getDriver().getCurrentUrl();
-    }
-
-
-    protected WebElement waitForElement(By locator) {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     protected void click(By locator) {
@@ -37,12 +29,23 @@ public class BasePage {
         element.sendKeys(text);
     }
 
+    protected WebElement waitForElement(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
     protected String getText(By locator) {
         return waitForElement(locator).getText();
     }
 
     protected boolean isDisplayed(By locator) {
-        return waitForElement(locator).isDisplayed();
+        try {
+            return waitForElement(locator).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    protected String getCurrentUrl() {
+        return driver.getCurrentUrl();
     }
 }
-

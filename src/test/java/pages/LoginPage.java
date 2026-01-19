@@ -4,42 +4,26 @@ import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
 
-    // Locators
-    private final By usernameInput = By.id("user-name");
-    private final By passwordInput = By.id("password");
-    private final By loginButton   = By.id("login-button");
-    private final By errorMessage  = By.cssSelector("h3[data-test='error']");
+    private final By username = By.id("user-name");
+    private final By password = By.id("password");
+    private final By loginBtn = By.id("login-button");
+    private final By errorMsg = By.cssSelector("[data-test='error']");
 
-    // Actions
-    public void enterUsername(String username) {
-        type(usernameInput, username);
+    public void login(String user, String pass) {
+        type(username, user);
+        type(password, pass);
+        click(loginBtn);
     }
-
-    public void enterPassword(String password) {
-        type(passwordInput, password);
-    }
-
-    public void clickLogin() {
-        click(loginButton);
-    }
-
-    public void login(String username, String password) {
-        enterUsername(username);
-        enterPassword(password);
-        clickLogin();
-    }
-
-    // -------- STATE METHODS (NO ASSERTIONS) --------
 
     public boolean isLoginSuccessful() {
         return getCurrentUrl().contains("inventory");
     }
 
     public boolean isErrorMessageDisplayed() {
-        return isDisplayed(errorMessage);
+        return isDisplayed(errorMsg);
     }
 
     public String getErrorMessageText() {
-        return getText(errorMessage);
+        return getText(errorMsg);
     }
 }

@@ -19,21 +19,25 @@ public class Hook {
         // 1️⃣ Read environment (default = qa)
         String env = System.getProperty("env", "qa");
 
-        // 2️⃣ Load config based on environment
+        // 2️⃣ Enable incognito mode (default = true)
+        System.setProperty("incognito", "true");
+
+        // 3️⃣ Load config based on environment
         ConfigReader.loadConfig(env);
 
-        // 3️⃣ Initialize WebDriver
+        // 4️⃣ Initialize WebDriver
         DriverFactory.initDriver();
 
-        // 4️⃣ Add scenario details to Allure
+        // 5️⃣ Add scenario details to Allure
         Allure.parameter("Environment", env);
         Allure.parameter("Scenario", scenario.getName());
+        Allure.parameter("Incognito", "true");
     }
 
     @After
     public void tearDown(Scenario scenario) {
 
-        // 5️⃣ Attach screenshot on failure
+        // 6️⃣ Attach screenshot on failure
         if (scenario.isFailed() && DriverFactory.getDriver() != null) {
 
             byte[] screenshot =
@@ -46,7 +50,7 @@ public class Hook {
             );
         }
 
-        // 6️⃣ Quit browser safely
+        // 7️⃣ Quit browser safely
         DriverFactory.quitDriver();
     }
 }

@@ -2,9 +2,11 @@ name: Selenium Automation CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -18,7 +20,7 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
+          distribution: temurin
           java-version: '17'
 
       - name: Cache Maven packages
@@ -26,12 +28,13 @@ jobs:
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
+          restore-keys: |
+            ${{ runner.os }}-m2-
 
+      # 🔥 IMPORTANT FIX: Headless + Incognito for CI
       - name: Run tests
-        run: mvn clean test -Denv=qa -Dbrowser=chrome
+        run: mvn clean test -Denv=qa -Dbrowser=chrome -Dheadless=true -Dincognito=true
 
-      # Upload raw results
       - name: Upload Allure results
         if: always()
         uses: actions/upload-artifact@v4
@@ -39,7 +42,6 @@ jobs:
           name: allure-results
           path: target/allure-results
 
-      # 🔹 Install Allure (NO usage here)
       - name: Install Allure CLI
         if: always()
         run: |
@@ -48,7 +50,6 @@ jobs:
           sudo mv allure-2.25.0 /opt/allure
           echo "/opt/allure/bin" >> $GITHUB_PATH
 
-      # 🔹 Use Allure in NEXT step
       - name: Generate Allure HTML report
         if: always()
         run: |
