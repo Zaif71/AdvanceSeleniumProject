@@ -1,5 +1,6 @@
 name: Selenium Automation CI
-
+permissions:
+  contents: write
 on:
   push:
     branches:
@@ -31,10 +32,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2-
 
-      # 🔥 IMPORTANT FIX: Headless + Incognito for CI
+      # 🔥 Run Selenium tests in CI-safe mode
       - name: Run tests
         run: mvn clean test -Denv=qa -Dbrowser=chrome -Dheadless=true -Dincognito=true
 
+      # 🔹 Upload raw Allure results
       - name: Upload Allure results
         if: always()
         uses: actions/upload-artifact@v4
@@ -42,6 +44,7 @@ jobs:
           name: allure-results
           path: target/allure-results
 
+      # 🔹 Install Allure CLI
       - name: Install Allure CLI
         if: always()
         run: |
@@ -50,15 +53,39 @@ jobs:
           sudo mv allure-2.25.0 /opt/allure
           echo "/opt/allure/bin" >> $GITHUB_PATH
 
+      # 🔹 Generate Allure HTML report
       - name: Generate Allure HTML report
         if: always()
         run: |
           allure --version
           allure generate target/allure-results -o allure-report --clean
 
+      # 🔹 Upload Allure HTML report as artifact
       - name: Upload Allure HTML report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
           path: allure-report
+
+  # 🚀 NEW JOB: Publish Allure report to GitHub Pages
+  publish-allure:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download Allure HTML report
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
+
+      - name: Deploy Allure report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-report

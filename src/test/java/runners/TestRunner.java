@@ -10,7 +10,11 @@ import utils.ConfigReader;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        monochrome = true
+        monochrome = true,
+        plugin = {
+                "pretty",
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+        }
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
