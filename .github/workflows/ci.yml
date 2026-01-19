@@ -1,5 +1,6 @@
 name: Selenium Automation CI
-
+permissions:
+  contents: write
 on:
   push:
     branches:
