@@ -31,8 +31,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2-
 
+      # 🔥 IMPORTANT FIX: Headless + Incognito for CI
       - name: Run tests
-        run: mvn clean test -Denv=qa -Dbrowser=chrome
+        run: mvn clean test -Denv=qa -Dbrowser=chrome -Dheadless=true -Dincognito=true
 
       - name: Upload Allure results
         if: always()
