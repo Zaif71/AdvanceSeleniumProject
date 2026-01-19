@@ -10,23 +10,33 @@ public class DriverFactory {
 
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    // Initialize driver
     public static void initDriver() {
 
         if (driver.get() == null) {
 
-            // Read incognito flag (default = false)
+            // 🔹 Read flags
             String incognito = System.getProperty("incognito", "false");
+            String headless = System.getProperty("headless", "false");
 
             ChromeOptions options = new ChromeOptions();
 
-            // ✅ Enable Incognito if flag is true
+            // 🔹 Incognito (local / CI)
             if (incognito.equalsIgnoreCase("true")) {
                 options.addArguments("--incognito");
             }
 
-            // Recommended options
-            options.addArguments("--start-maximized");
+            // 🔹 Headless (MANDATORY for CI)
+            if (headless.equalsIgnoreCase("true")) {
+                options.addArguments("--headless=new");
+                options.addArguments("--window-size=1920,1080");
+                options.addArguments("--disable-gpu");
+            }
+
+            // 🔹 REQUIRED for Linux CI
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+
+            // 🔹 Safe options
             options.addArguments("--disable-notifications");
             options.addArguments("--remote-allow-origins=*");
 
@@ -40,12 +50,10 @@ public class DriverFactory {
         }
     }
 
-    // Get driver
     public static WebDriver getDriver() {
         return driver.get();
     }
 
-    // Quit driver
     public static void quitDriver() {
         if (driver.get() != null) {
             driver.get().quit();
