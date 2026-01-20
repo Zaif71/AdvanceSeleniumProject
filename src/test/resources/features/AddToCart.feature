@@ -13,9 +13,9 @@ Feature: Add products to the cart
     When user navigates to cart
     And user proceeds to checkout
     And user enters checkout details
-      | firstName | John  |
-      | lastName  | Doe   |
-      | zipCode   | 12345 |
+      | firstName | Zaif   |
+      | lastName  | Techi  |
+      | zipCode   | 122107 |
     And user completes the checkout
     Then checkout should be successful
   
