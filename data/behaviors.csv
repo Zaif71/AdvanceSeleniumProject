@@ -1,5 +1,5 @@
 "Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
 "","SauceDemo Login","Login with different credentials","0","0","6","0","0"
-"","Add products to the cart","User adds multiple products to the cart","0","0","1","0","0"
-"","Logout functionality","User logs out successfully","0","0","1","0","0"
 "","Add products to the cart","User completes checkout with products in cart","0","0","1","0","0"
+"","Logout functionality","User logs out successfully","0","0","1","0","0"
+"","Add products to the cart","User adds multiple products to the cart","0","0","1","0","0"
