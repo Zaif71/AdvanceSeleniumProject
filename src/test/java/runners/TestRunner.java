@@ -5,7 +5,6 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import utils.ConfigReader;
 
 @CucumberOptions(
         features = "src/test/resources/features",
@@ -15,7 +14,6 @@ import utils.ConfigReader;
                 "pretty",
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         }
-
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
@@ -25,4 +23,5 @@ public class TestRunner extends AbstractTestNGCucumberTests {
         System.setProperty("browser", browser);
     }
 
+    
 }
