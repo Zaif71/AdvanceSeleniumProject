@@ -41,3 +41,8 @@ build/
 ### Allure ###
 allure-results/
 .allure/
+
+### Logs ###
+ # JVM crash logs
+hs_err_pid*.log
+replay_pid*.log

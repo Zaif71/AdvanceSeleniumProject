@@ -17,6 +17,11 @@
     <cucumber.version>7.15.0</cucumber.version>
     <testng.version>7.9.0</testng.version>
     <allure.version>2.25.0</allure.version>
+    <sonar.projectKey>advance-selenium</sonar.projectKey>
+    <sonar.projectName>Advance Selenium</sonar.projectName>
+    <sonar.host.url>http://localhost:9000</sonar.host.url>
+
+
   </properties>
 
   <dependencies>
