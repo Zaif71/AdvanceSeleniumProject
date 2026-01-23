@@ -13,6 +13,7 @@ Feature: Add products to the cart
     When user navigates to cart
     And user proceeds to checkout
     And user enters checkout details
+      | field     | value  |
       | firstName | Zaif   |
       | lastName  | Techi  |
       | zipCode   | 122107 |
