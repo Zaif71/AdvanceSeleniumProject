@@ -1,8 +1,10 @@
 package pages;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
+    private static final Logger log = LoggerFactory.getLogger(LoginPage.class);
 
     private final By username = By.id("user-name");
     private final By password = By.id("password");
@@ -13,6 +15,7 @@ public class LoginPage extends BasePage {
         type(username, user);
         type(password, pass);
         click(loginBtn);
+        log.info("Clicking on Login button");
     }
 
     public boolean isLoginSuccessful() {

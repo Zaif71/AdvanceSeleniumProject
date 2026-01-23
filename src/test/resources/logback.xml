@@ -1,0 +1,42 @@
+<configuration>
+
+    <!-- Log directory -->
+    <property name="LOG_DIR" value="logs"/>
+
+    <!-- ================= CONSOLE APPENDER ================= -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{HH:mm:ss.SSS} [%thread] [%X{requestId}] [%X{testId}] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+        
+    </appender>
+
+    <!-- ================= FILE APPENDER ================= -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/automation.log</file>
+
+        <!-- 🔑 Clears log file on every run -->
+        <append>false</append>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rolling -->
+            <fileNamePattern>${LOG_DIR}/automation-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%X{requestId}] [%X{testId}] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- ================= ROOT LOGGER ================= -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>
