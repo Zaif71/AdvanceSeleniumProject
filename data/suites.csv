@@ -1,13 +1,13 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Jan 29 07:14:49 UTC 2026","Thu Jan 29 07:14:50 UTC 2026","1126","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+"passed","Thu Jan 29 07:20:09 UTC 2026","Thu Jan 29 07:20:10 UTC 2026","1061","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Thu Jan 29 07:14:48 UTC 2026","Thu Jan 29 07:14:49 UTC 2026","1148","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+"passed","Thu Jan 29 07:20:04 UTC 2026","Thu Jan 29 07:20:08 UTC 2026","3439","","Validate product details in cart","","Validate product name, price and quantity in cart","","Validate product name, price and quantity in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Thu Jan 29 07:14:40 UTC 2026","Thu Jan 29 07:14:48 UTC 2026","7425","","Validate product details in cart","","Validate product name, price and quantity in cart","","Validate product name, price and quantity in cart","  As a user
+"passed","Thu Jan 29 07:20:08 UTC 2026","Thu Jan 29 07:20:09 UTC 2026","1062","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Thu Jan 29 07:14:50 UTC 2026","Thu Jan 29 07:14:51 UTC 2026","1103","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+"passed","Thu Jan 29 07:20:10 UTC 2026","Thu Jan 29 07:20:11 UTC 2026","1061","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
