@@ -1,13 +1,22 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Jan 29 07:20:09 UTC 2026","Thu Jan 29 07:20:10 UTC 2026","1061","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+"passed","Thu Jan 29 09:28:15 UTC 2026","Thu Jan 29 09:28:16 UTC 2026","1003","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Thu Jan 29 07:20:04 UTC 2026","Thu Jan 29 07:20:08 UTC 2026","3439","","Validate product details in cart","","Validate product name, price and quantity in cart","","Validate product name, price and quantity in cart","  As a user
+"passed","Thu Jan 29 09:27:52 UTC 2026","Thu Jan 29 09:28:05 UTC 2026","13170","","Add products to the cart","","User adds multiple products to the cart","","User adds multiple products to the cart",""
+"passed","Thu Jan 29 09:28:12 UTC 2026","Thu Jan 29 09:28:13 UTC 2026","1047","","Logout functionality","","User logs out successfully","","User logs out successfully",""
+"passed","Thu Jan 29 09:28:10 UTC 2026","Thu Jan 29 09:28:11 UTC 2026","847","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Thu Jan 29 09:28:11 UTC 2026","Thu Jan 29 09:28:12 UTC 2026","849","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Thu Jan 29 09:28:13 UTC 2026","Thu Jan 29 09:28:14 UTC 2026","1008","","Validate product details in cart","","Validate product name, price and quantity in cart","","Validate product name, price and quantity in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Thu Jan 29 07:20:08 UTC 2026","Thu Jan 29 07:20:09 UTC 2026","1062","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+"passed","Thu Jan 29 09:28:10 UTC 2026","Thu Jan 29 09:28:10 UTC 2026","852","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Thu Jan 29 09:28:07 UTC 2026","Thu Jan 29 09:28:08 UTC 2026","846","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Thu Jan 29 09:28:16 UTC 2026","Thu Jan 29 09:28:17 UTC 2026","996","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Thu Jan 29 07:20:10 UTC 2026","Thu Jan 29 07:20:11 UTC 2026","1061","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+"passed","Thu Jan 29 09:28:14 UTC 2026","Thu Jan 29 09:28:15 UTC 2026","1023","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
+"passed","Thu Jan 29 09:28:05 UTC 2026","Thu Jan 29 09:28:07 UTC 2026","1407","","Add products to the cart","","User completes checkout with products in cart","","User completes checkout with products in cart",""
+"passed","Thu Jan 29 09:28:09 UTC 2026","Thu Jan 29 09:28:10 UTC 2026","886","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Thu Jan 29 09:28:08 UTC 2026","Thu Jan 29 09:28:09 UTC 2026","868","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
