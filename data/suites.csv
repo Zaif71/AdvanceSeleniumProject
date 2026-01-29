@@ -1,10 +1,13 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Fri Jan 23 10:58:27 UTC 2026","Fri Jan 23 10:58:28 UTC 2026","938","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Fri Jan 23 10:58:32 UTC 2026","Fri Jan 23 10:58:33 UTC 2026","926","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Fri Jan 23 10:58:31 UTC 2026","Fri Jan 23 10:58:32 UTC 2026","941","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Fri Jan 23 10:58:28 UTC 2026","Fri Jan 23 10:58:29 UTC 2026","948","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Fri Jan 23 10:58:30 UTC 2026","Fri Jan 23 10:58:31 UTC 2026","955","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Fri Jan 23 10:58:03 UTC 2026","Fri Jan 23 10:58:25 UTC 2026","21931","","Add products to the cart","","User adds multiple products to the cart","","User adds multiple products to the cart",""
-"passed","Fri Jan 23 10:58:29 UTC 2026","Fri Jan 23 10:58:30 UTC 2026","970","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Fri Jan 23 10:58:25 UTC 2026","Fri Jan 23 10:58:27 UTC 2026","1583","","Add products to the cart","","User completes checkout with products in cart","","User completes checkout with products in cart",""
-"passed","Fri Jan 23 10:58:33 UTC 2026","Fri Jan 23 10:58:34 UTC 2026","1190","","Logout functionality","","User logs out successfully","","User logs out successfully",""
+"passed","Thu Jan 29 07:14:49 UTC 2026","Thu Jan 29 07:14:50 UTC 2026","1126","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+  I want to verify product details in the cart
+  So that correct product information is displayed before checkout"
+"passed","Thu Jan 29 07:14:48 UTC 2026","Thu Jan 29 07:14:49 UTC 2026","1148","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+  I want to verify product details in the cart
+  So that correct product information is displayed before checkout"
+"passed","Thu Jan 29 07:14:40 UTC 2026","Thu Jan 29 07:14:48 UTC 2026","7425","","Validate product details in cart","","Validate product name, price and quantity in cart","","Validate product name, price and quantity in cart","  As a user
+  I want to verify product details in the cart
+  So that correct product information is displayed before checkout"
+"passed","Thu Jan 29 07:14:50 UTC 2026","Thu Jan 29 07:14:51 UTC 2026","1103","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+  I want to verify product details in the cart
+  So that correct product information is displayed before checkout"
