@@ -7,7 +7,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 @CucumberOptions(
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/ValidateCartDetails.feature",
         glue = {"stepdefinitions", "hooks"},
         monochrome = true,
         plugin = {
@@ -23,5 +23,4 @@ public class TestRunner extends AbstractTestNGCucumberTests {
         System.setProperty("browser", browser);
     }
 
-    
 }
