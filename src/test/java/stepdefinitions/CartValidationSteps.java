@@ -4,16 +4,16 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.testng.Assert;
 import pages.CartPage;
-import pages.ProductPage;
+import pages.ProductsPage;
 
 public class CartValidationSteps {
 
     CartPage cartPage = new CartPage();
-    ProductPage productPage = new ProductPage();
+    ProductsPage productsPage = new ProductsPage();
 
     @And("user navigates to cart page")
     public void user_navigates_to_cart_page() {
-        productPage.clickCartIcon();
+        productsPage.clickCartIcon();
     }
 
     @Then("product name should be {string}")
