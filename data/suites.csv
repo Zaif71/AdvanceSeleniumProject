@@ -1,22 +1,25 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Jan 29 09:29:06 UTC 2026","Thu Jan 29 09:29:08 UTC 2026","1466","","Add products to the cart","","User completes checkout with products in cart","","User completes checkout with products in cart",""
-"passed","Thu Jan 29 09:29:17 UTC 2026","Thu Jan 29 09:29:18 UTC 2026","1052","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+"passed","Mon Feb 02 11:27:01 UTC 2026","Mon Feb 02 11:27:02 UTC 2026","1004","","Filter and Sort Products","","User filters products by price high to low","","User filters products by price high to low",""
+"passed","Mon Feb 02 11:26:57 UTC 2026","Mon Feb 02 11:26:57 UTC 2026","887","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Mon Feb 02 11:26:58 UTC 2026","Mon Feb 02 11:26:59 UTC 2026","899","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Mon Feb 02 11:26:57 UTC 2026","Mon Feb 02 11:26:58 UTC 2026","918","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Mon Feb 02 11:27:02 UTC 2026","Mon Feb 02 11:27:03 UTC 2026","976","","Filter and Sort Products","","User filters products by name A to Z","","User filters products by name A to Z",""
+"passed","Mon Feb 02 11:26:49 UTC 2026","Mon Feb 02 11:26:52 UTC 2026","3191","","Add products to the cart","","User adds multiple products to the cart","","User adds multiple products to the cart",""
+"passed","Mon Feb 02 11:26:52 UTC 2026","Mon Feb 02 11:26:54 UTC 2026","1446","","Add products to the cart","","User completes checkout with products in cart","","User completes checkout with products in cart",""
+"passed","Mon Feb 02 11:27:03 UTC 2026","Mon Feb 02 11:27:04 UTC 2026","1081","","Validate product details in cart","","Validate product name, price and quantity in cart","","Validate product name, price and quantity in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Thu Jan 29 09:29:11 UTC 2026","Thu Jan 29 09:29:12 UTC 2026","903","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Thu Jan 29 09:29:13 UTC 2026","Thu Jan 29 09:29:14 UTC 2026","1091","","Logout functionality","","User logs out successfully","","User logs out successfully",""
-"passed","Thu Jan 29 09:29:10 UTC 2026","Thu Jan 29 09:29:11 UTC 2026","927","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Thu Jan 29 09:29:12 UTC 2026","Thu Jan 29 09:29:12 UTC 2026","881","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Thu Jan 29 09:29:12 UTC 2026","Thu Jan 29 09:29:13 UTC 2026","885","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Thu Jan 29 09:29:14 UTC 2026","Thu Jan 29 09:29:15 UTC 2026","1052","","Validate product details in cart","","Validate product name, price and quantity in cart","","Validate product name, price and quantity in cart","  As a user
+"passed","Mon Feb 02 11:27:07 UTC 2026","Mon Feb 02 11:27:08 UTC 2026","1038","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Thu Jan 29 09:29:08 UTC 2026","Thu Jan 29 09:29:09 UTC 2026","895","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Thu Jan 29 09:28:57 UTC 2026","Thu Jan 29 09:29:06 UTC 2026","9040","","Add products to the cart","","User adds multiple products to the cart","","User adds multiple products to the cart",""
-"passed","Thu Jan 29 09:29:18 UTC 2026","Thu Jan 29 09:29:19 UTC 2026","1045","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+"passed","Mon Feb 02 11:26:54 UTC 2026","Mon Feb 02 11:26:55 UTC 2026","886","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Mon Feb 02 11:26:59 UTC 2026","Mon Feb 02 11:27:00 UTC 2026","1071","","Logout functionality","","User logs out successfully","","User logs out successfully",""
+"passed","Mon Feb 02 11:26:55 UTC 2026","Mon Feb 02 11:26:56 UTC 2026","905","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Mon Feb 02 11:27:06 UTC 2026","Mon Feb 02 11:27:07 UTC 2026","1064","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Thu Jan 29 09:29:15 UTC 2026","Thu Jan 29 09:29:17 UTC 2026","1072","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+"passed","Mon Feb 02 11:27:00 UTC 2026","Mon Feb 02 11:27:01 UTC 2026","1037","","Filter and Sort Products","","User filters products by price low to high","","User filters products by price low to high",""
+"passed","Mon Feb 02 11:27:04 UTC 2026","Mon Feb 02 11:27:06 UTC 2026","1040","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Thu Jan 29 09:29:09 UTC 2026","Thu Jan 29 09:29:10 UTC 2026","921","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Mon Feb 02 11:26:56 UTC 2026","Mon Feb 02 11:26:57 UTC 2026","906","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
