@@ -7,7 +7,7 @@ Feature: Add products to the cart
   Scenario: User adds multiple products to the cart
     When user adds "Sauce Labs Backpack" to the cart
     And user adds "Sauce Labs Bike Light" to the cart
-    Then cart badge count should be "3"
+    Then cart badge count should be "2"
 
   Scenario: User completes checkout with products in cart
     When user navigates to cart
