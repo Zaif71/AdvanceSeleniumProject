@@ -5,9 +5,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import utils.ConfigReader;
-import utils.DriverFactory;
-import utils.LogContext;
+import utils.*;
 
 import java.io.ByteArrayInputStream;
 import java.nio.file.Files;
@@ -25,6 +23,7 @@ public class Hook {
         ConfigReader.loadConfig(env);
         DriverFactory.initDriver();
 
+        // Copy environment.properties for Allure
         try {
             Path source = Path.of("src/test/resources/environment.properties");
             Path target = Path.of("target/allure-results/environment.properties");
@@ -32,22 +31,32 @@ public class Hook {
             Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
         } catch (Exception ignored) {}
 
-        // Structured logging
         LogContext.init(scenario.getName());
     }
 
     @After
     public void tearDown(Scenario scenario) {
 
-        if (scenario.isFailed() && DriverFactory.getDriver() != null) {
-            byte[] screenshot =
-                    ((TakesScreenshot) DriverFactory.getDriver())
-                            .getScreenshotAs(OutputType.BYTES);
+        if (scenario.isFailed()) {
 
-            io.qameta.allure.Allure.addAttachment(
-                    "Failure Screenshot",
-                    new ByteArrayInputStream(screenshot)
+            // We CANNOT access Throwable in Cucumber Java
+            FailureLogger.logFailure(
+                    FailureType.SCRIPT,
+                    "Scenario failed (possible undefined step or framework error)",
+                    new RuntimeException("Cucumber scenario failed")
             );
+
+            // Screenshot on failure
+            if (DriverFactory.getDriver() != null) {
+                byte[] screenshot =
+                        ((TakesScreenshot) DriverFactory.getDriver())
+                                .getScreenshotAs(OutputType.BYTES);
+
+                io.qameta.allure.Allure.addAttachment(
+                        "Failure Screenshot",
+                        new ByteArrayInputStream(screenshot)
+                );
+            }
         }
 
         LogContext.clear();

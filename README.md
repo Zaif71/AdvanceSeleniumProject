@@ -16,7 +16,7 @@ The framework automates end-to-end functional testing of the SauceDemo applicati
 - Build Tool: Maven
 - Reporting: Allure
 - CI/CD: GitHub Actions
-- Design Pattern: Page Object Model (POM)
+- Design Pattern: Page Object Model (POM) 
 
 ---
 
