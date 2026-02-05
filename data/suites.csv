@@ -1,25 +1,25 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Feb 02 11:27:55 UTC 2026","Mon Feb 02 11:28:04 UTC 2026","9026","","Add products to the cart","","User adds multiple products to the cart","","User adds multiple products to the cart",""
-"passed","Mon Feb 02 11:28:06 UTC 2026","Mon Feb 02 11:28:07 UTC 2026","867","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Mon Feb 02 11:28:18 UTC 2026","Mon Feb 02 11:28:19 UTC 2026","1126","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+"passed","Thu Feb 05 10:08:34 UTC 2026","Thu Feb 05 10:08:35 UTC 2026","871","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Thu Feb 05 10:08:20 UTC 2026","Thu Feb 05 10:08:28 UTC 2026","8653","","Add products to the cart","","User adds multiple products to the cart","","User adds multiple products to the cart",""
+"passed","Thu Feb 05 10:08:31 UTC 2026","Thu Feb 05 10:08:31 UTC 2026","898","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Thu Feb 05 10:08:40 UTC 2026","Thu Feb 05 10:08:41 UTC 2026","1046","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Mon Feb 02 11:28:05 UTC 2026","Mon Feb 02 11:28:06 UTC 2026","865","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Mon Feb 02 11:28:08 UTC 2026","Mon Feb 02 11:28:09 UTC 2026","875","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Mon Feb 02 11:28:11 UTC 2026","Mon Feb 02 11:28:12 UTC 2026","1030","","Logout functionality","","User logs out successfully","","User logs out successfully",""
-"passed","Mon Feb 02 11:28:12 UTC 2026","Mon Feb 02 11:28:13 UTC 2026","983","","Filter and Sort Products","","User filters products by price low to high","","User filters products by price low to high",""
-"passed","Mon Feb 02 11:28:07 UTC 2026","Mon Feb 02 11:28:08 UTC 2026","874","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Mon Feb 02 11:28:10 UTC 2026","Mon Feb 02 11:28:11 UTC 2026","851","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
-"passed","Mon Feb 02 11:28:04 UTC 2026","Mon Feb 02 11:28:05 UTC 2026","1829","","Add products to the cart","","User completes checkout with products in cart","","User completes checkout with products in cart",""
-"passed","Mon Feb 02 11:28:17 UTC 2026","Mon Feb 02 11:28:18 UTC 2026","1172","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+"passed","Thu Feb 05 10:08:39 UTC 2026","Thu Feb 05 10:08:40 UTC 2026","1046","","Validate product details in cart","","Validate product name, price and quantity in cart","","Validate product name, price and quantity in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Mon Feb 02 11:28:16 UTC 2026","Mon Feb 02 11:28:17 UTC 2026","1143","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
+"passed","Thu Feb 05 10:08:32 UTC 2026","Thu Feb 05 10:08:33 UTC 2026","857","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Thu Feb 05 10:08:33 UTC 2026","Thu Feb 05 10:08:34 UTC 2026","866","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Thu Feb 05 10:08:35 UTC 2026","Thu Feb 05 10:08:36 UTC 2026","1290","","Logout functionality","","User logs out successfully","","User logs out successfully",""
+"passed","Thu Feb 05 10:08:37 UTC 2026","Thu Feb 05 10:08:38 UTC 2026","990","","Filter and Sort Products","","User filters products by price high to low","","User filters products by price high to low",""
+"passed","Thu Feb 05 10:08:36 UTC 2026","Thu Feb 05 10:08:37 UTC 2026","1000","","Filter and Sort Products","","User filters products by price low to high","","User filters products by price low to high",""
+"passed","Thu Feb 05 10:08:30 UTC 2026","Thu Feb 05 10:08:31 UTC 2026","869","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Thu Feb 05 10:08:28 UTC 2026","Thu Feb 05 10:08:30 UTC 2026","1447","","Add products to the cart","","User completes checkout with products in cart","","User completes checkout with products in cart",""
+"passed","Thu Feb 05 10:08:38 UTC 2026","Thu Feb 05 10:08:39 UTC 2026","955","","Filter and Sort Products","","User filters products by name A to Z","","User filters products by name A to Z",""
+"passed","Thu Feb 05 10:08:42 UTC 2026","Thu Feb 05 10:08:43 UTC 2026","1031","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Mon Feb 02 11:28:13 UTC 2026","Mon Feb 02 11:28:14 UTC 2026","964","","Filter and Sort Products","","User filters products by price high to low","","User filters products by price high to low",""
-"passed","Mon Feb 02 11:28:14 UTC 2026","Mon Feb 02 11:28:15 UTC 2026","954","","Filter and Sort Products","","User filters products by name A to Z","","User filters products by name A to Z",""
-"passed","Mon Feb 02 11:28:15 UTC 2026","Mon Feb 02 11:28:16 UTC 2026","1128","","Validate product details in cart","","Validate product name, price and quantity in cart","","Validate product name, price and quantity in cart","  As a user
+"passed","Thu Feb 05 10:08:32 UTC 2026","Thu Feb 05 10:08:32 UTC 2026","900","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
+"passed","Thu Feb 05 10:08:41 UTC 2026","Thu Feb 05 10:08:42 UTC 2026","1040","","Validate product details in cart","","Validate multiple product details in cart","","Validate multiple product details in cart","  As a user
   I want to verify product details in the cart
   So that correct product information is displayed before checkout"
-"passed","Mon Feb 02 11:28:09 UTC 2026","Mon Feb 02 11:28:10 UTC 2026","843","","SauceDemo Login","","Login with different credentials","","Login with different credentials",""
