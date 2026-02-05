@@ -7,7 +7,7 @@ public class ConfigReader {
 
     private static Properties properties = new Properties();
 
-    public static void loadConfig(String env) {
+    public static void loadConfig(String env) { 
         try {
             String fileName = "config/config-" + env + ".properties";
             InputStream is = ConfigReader.class

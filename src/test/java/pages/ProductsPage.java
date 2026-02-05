@@ -53,7 +53,7 @@ public class ProductsPage extends BasePage {
 
     // ===== Sorting actions =====
     public void selectSortOption(String sortOption) {
-        Select select = new Select(waitForElement(sortDropdown));
+       Select select = new Select(waitForVisible(sortDropdown));
         select.selectByVisibleText(sortOption);
     }
 
